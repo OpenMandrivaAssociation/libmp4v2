@@ -3,14 +3,17 @@
 %define develname %mklibname -d mp4v2
 %define oldlibname %mklibname mpeg4ip 0
 %define olddevelname %mklibname -d mpeg4ip
+%define oname mp4v2
+%define snapshot 20090110
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
-Version: 1.5.0.1
-Release: %mkrel 2
+Version: 2.0
+Release: %mkrel 0.%snapshot.1
 License: MPLv1.1
 Group: Sound
-URL: http://resare.com/libmp4v2/
-Source0: http://resare.com/libmp4v2/dist/libmp4v2-%{version}.tar.bz2
+URL: http://code.google.com/p/mp4v2/
+Source0: http://mp4v2.googlecode.com/files/%oname-%version-%snapshot.tar.bz2
+Patch: mp4v2-2.0-20090110-format-strings.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -53,7 +56,8 @@ and is an exact copy of the library distributed in the mpeg4ip package.
 This contains the command line example utilities.
 
 %prep
-%setup -q
+%setup -q -n %oname-%version-%snapshot
+%patch -p1
 
 %build
 %configure2_5x \
@@ -92,8 +96,8 @@ rm -rf %{buildroot}
 
 %files -n %develname
 %defattr(-,root,root,0755)
-%doc README TODO INTERNALS API_CHANGES
-%{_includedir}/*.h
+%doc doc/*.txt
+%{_includedir}/mp4v2/
 %exclude %{_libdir}/*.la
 %{_libdir}/*.so
 %{_mandir}/man?/*
