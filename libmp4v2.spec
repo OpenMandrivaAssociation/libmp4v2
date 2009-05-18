@@ -4,7 +4,7 @@
 %define oldlibname %mklibname mpeg4ip 0
 %define olddevelname %mklibname -d mpeg4ip
 %define oname mp4v2
-%define snapshot 20090110
+%define snapshot 20090515
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
 Version: 2.0
