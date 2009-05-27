@@ -1,18 +1,17 @@
-%define major 0
+%define major 1
 %define libname %mklibname mp4v2_ %major
 %define develname %mklibname -d mp4v2
-%define oldlibname %mklibname mpeg4ip 0
 %define olddevelname %mklibname -d mpeg4ip
 %define oname mp4v2
-%define snapshot 20090515
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
-Version: 2.0
-Release: %mkrel 0.%snapshot.1
+Version: 1.9.0
+Release: %mkrel 1
+Epoch: 1
 License: MPLv1.1
 Group: Sound
 URL: http://code.google.com/p/mp4v2/
-Source0: http://mp4v2.googlecode.com/files/%oname-%version-%snapshot.tar.bz2
+Source0: http://mp4v2.googlecode.com/files/%oname-%version.tar.bz2
 Patch: mp4v2-2.0-20090110-format-strings.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -25,7 +24,6 @@ and is an exact copy of the library distributed in the mpeg4ip package.
 %package -n %libname
 Group: System/Libraries
 Summary: Library for working with files using the mp4 container format
-Conflicts: %oldlibname < 1.6.1-0.20070928.3
 
 %description -n %libname
 The libmp4v2 library provides an abstraction layer for working with files
@@ -35,8 +33,8 @@ and is an exact copy of the library distributed in the mpeg4ip package.
 %package -n %develname
 Summary: Development files for the mp4v2 library
 Group: Development/C++
-Requires: %{libname} = %{version}-%{release}
-Provides: libmp4v2-devel = %{version}-%{release}
+Requires: %{libname} = %epoch:%{version}-%{release}
+Provides: libmp4v2-devel = %epoch:%{version}-%{release}
 Conflicts: %olddevelname < 1.6.1-0.20070928.3
 
 %description -n %develname
@@ -56,7 +54,7 @@ and is an exact copy of the library distributed in the mpeg4ip package.
 This contains the command line example utilities.
 
 %prep
-%setup -q -n %oname-%version-%snapshot
+%setup -q -n %oname-%version
 %patch -p1
 
 %build
