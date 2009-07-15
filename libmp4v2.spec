@@ -5,7 +5,7 @@
 %define oname mp4v2
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
-Version: 1.9.0
+Version: 1.9.1
 Release: %mkrel 1
 Epoch: 1
 License: MPLv1.1
