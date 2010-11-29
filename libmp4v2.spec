@@ -67,8 +67,8 @@ This contains the command line example utilities.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-rm -rf %{buildroot}%{_mandir}/manm/
 
+rm -rf %{buildroot}%{_mandir}/manm/ %{buildroot}%{_libdir}/*.la
 
 %clean
 rm -rf %{buildroot}
@@ -96,8 +96,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root,0755)
 %doc doc/*.txt
 %{_includedir}/mp4v2/
-%exclude %{_libdir}/*.la
 %{_libdir}/*.so
 %{_mandir}/man?/*
-
-
