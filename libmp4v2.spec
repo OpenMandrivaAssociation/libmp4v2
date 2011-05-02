@@ -6,7 +6,7 @@
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
 Version: 1.9.1
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 1
 License: MPLv1.1
 Group: Sound
