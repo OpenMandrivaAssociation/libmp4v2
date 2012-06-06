@@ -1,18 +1,17 @@
-%define major 1
+%define major 2
 %define libname %mklibname mp4v2_ %major
 %define develname %mklibname -d mp4v2
 %define olddevelname %mklibname -d mpeg4ip
 %define oname mp4v2
 Summary: Library for working with files using the mp4 container format
 Name: libmp4v2
-Version: 1.9.1
-Release: %mkrel 5
+Version: 2.0.0
+Release: %mkrel 1
 Epoch: 1
 License: MPLv1.1
 Group: Sound
 URL: http://code.google.com/p/mp4v2/
 Source0: http://mp4v2.googlecode.com/files/%oname-%version.tar.bz2
-Patch: mp4v2-2.0-20090110-format-strings.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -55,7 +54,6 @@ This contains the command line example utilities.
 
 %prep
 %setup -q -n %oname-%version
-%patch -p1
 
 %build
 %configure2_5x \
@@ -72,14 +70,6 @@ rm -rf %{buildroot}%{_mandir}/manm/ %{buildroot}%{_libdir}/*.la
 
 %clean
 rm -rf %{buildroot}
-
-
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
 
 
 %files utils
