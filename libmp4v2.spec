@@ -12,7 +12,7 @@ Version:	2.0.0
 Release:	12
 License:	MPLv1.1
 Group:		Sound
-Url:		http://code.google.com/p/mp4v2/
+Url:		https://code.google.com/p/mp4v2/
 Source0:	http://mp4v2.googlecode.com/files/%{oname}-%{version}.tar.bz2
 
 %description
