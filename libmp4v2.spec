@@ -7,13 +7,12 @@
 
 Summary:	Library for working with files using the mp4 container format
 Name:		libmp4v2
-Epoch:		1
-Version:	2.0.0
-Release:	12
+Version:	2.1.3
+Release:	1
 License:	MPLv1.1
 Group:		Sound
-Url:		https://code.google.com/p/mp4v2/
-Source0:	http://mp4v2.googlecode.com/files/%{oname}-%{version}.tar.bz2
+Url:		http://mp4v2.org/
+Source0:	https://github.com/enzo1982/mp4v2/releases/download/v%{version}/mp4v2-%{version}.tar.bz2
 
 %description
 The libmp4v2 library provides an abstraction layer for working with files
@@ -49,17 +48,17 @@ and is an exact copy of the library distributed in the mpeg4ip package.
 This contains the command line example utilities.
 
 %prep
-%setup -qn %{oname}-%{version}
+%autosetup -n %{oname}-%{version} -p1
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--disable-dependency-tracking
-%make
+%make_build
 
 
 %install
-%makeinstall_std
+%make_install
 
 %files utils
 %doc COPYING
@@ -73,4 +72,3 @@ This contains the command line example utilities.
 %doc doc/*.txt
 %{_includedir}/mp4v2/
 %{_libdir}/*.so
-
