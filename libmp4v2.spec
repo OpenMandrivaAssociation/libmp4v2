@@ -3,7 +3,7 @@
 %define libname	%mklibname mp4v2
 %define devname	%mklibname -d mp4v2
 
-%define _disable_lto 1
+#define _disable_lto 1
 
 Summary:	Library for working with files using the mp4 container format
 Name:		libmp4v2
