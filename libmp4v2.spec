@@ -1,6 +1,6 @@
 %define oname	mp4v2
 %define major	2
-%define libname	%mklibname mp4v2_ %{major}
+%define libname	%mklibname mp4v2
 %define devname	%mklibname -d mp4v2
 
 %define _disable_lto 1
@@ -72,3 +72,4 @@ This contains the command line example utilities.
 %doc doc/*.txt
 %{_includedir}/mp4v2/
 %{_libdir}/*.so
+%{_libdir}/pkgconfig/mp4v2.pc
