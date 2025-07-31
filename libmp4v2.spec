@@ -48,7 +48,7 @@ using the libmp4v2 library.
 %files -n %{devname}
 %doc doc/*.txt
 %{_includedir}/mp4v2/
-%{_libdir}/libmp4v2.so.so
+%{_libdir}/libmp4v2.so
 %{_libdir}/pkgconfig/mp4v2.pc
 
 #-----------------------------------------------------------------------------
